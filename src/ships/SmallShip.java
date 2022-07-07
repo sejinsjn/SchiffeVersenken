@@ -1,43 +1,9 @@
 package ships;
 
-public class SmallShip implements Ship{
-
-    private String name;
-    private boolean body[];
-    private boolean isDestroyed = false;
+public class SmallShip extends Ship{
 
     public SmallShip(){
-        name = "SmallShip";
-        body = new boolean[] {true, true};
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getSize() {
-        return body.length;
-    }
-
-    @Override
-    public boolean[] getBody() {
-        return body;
-    }
-
-    @Override
-    public boolean isDestroyed() {
-        if (!isDestroyed)
-            for (boolean b : body)
-                if (b)
-                    return false;
-        return true;
-    }
-
-    @Override
-    public void gotHit(int where) {
-        if(!isDestroyed)
-            body[where] = false;
+        setName("SmallShip");
+        setBody(new boolean[] {true, true});
     }
 }
